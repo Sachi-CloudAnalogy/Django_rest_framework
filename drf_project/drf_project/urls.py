@@ -7,5 +7,6 @@ urlpatterns = [
     path('student/<int:pk>', views.student_detail),
     path('student/', views.student_list),
     path('student_create/', views.student_create), 
-    path('studentapi/', views.student_api),
+    # path('studentapi/', views.student_api),
+    path('studentapi/', views.StudentAPI.as_view()),   # for class based view
 ]
