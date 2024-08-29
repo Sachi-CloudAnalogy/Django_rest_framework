@@ -130,3 +130,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     'DEFAULT_AUTHENTICATION_CLASSES':['rest_framework.authentication.BasicAuthentication'],
 #     'DEFAULT_PERMISSION_CLASSES':['rest_framework.permissions.IsAuthenticated']
 #     }
+
+#to define throttling globally
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_RATES':{
+        'anon': '2/day',
+        'user': '5/hour',
+        'jack': '3/minute'
+    }
+}
