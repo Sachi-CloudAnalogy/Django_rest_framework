@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'drf_app',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -139,3 +140,14 @@ REST_FRAMEWORK = {
         'jack': '3/minute'
     }
 }
+
+# to define filter backend globally
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS':
+#     ['django_filters.rest_framework.DjangoFilterBackend']
+# }
+
+# REST_FRAMEWORK = {
+# 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+# 'PAGE_SIZE': 5
+# }

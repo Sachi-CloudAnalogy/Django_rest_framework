@@ -5,7 +5,6 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken.views import obtain_auth_token
 from drf_app.auth import CustomAuthToken
 
-
 router = DefaultRouter()
 
 router.register('student_api', modelview.StudentModelViewSet, basename='student')
@@ -21,5 +20,10 @@ urlpatterns = [
     path('', include(router.urls)), 
     path('auth/', include('rest_framework.urls', namespace='rest_framework')),     #builtin url (to get login and logout options)
     path('gettoken/', obtain_auth_token),
-    path('get_token/', CustomAuthToken.as_view())
+    path('get_token/', CustomAuthToken.as_view()),
+    path('studentlist/', modelview.StudentList.as_view()),
+    path('student_list/', modelview.StudentListView.as_view()),
+    path('student_filter/', modelview.StudentLV.as_view()),
+    path('studentview/', modelview.StudentView.as_view()),
 ]
+
